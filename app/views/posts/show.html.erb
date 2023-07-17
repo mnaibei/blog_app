@@ -1,1 +1,31 @@
-<div>Here is a list of posts for a given user</div>
+<div class="comments_details">
+  <div class="comments_container">
+    <div class="title">
+      <h2>"<%= @post.title %>" by <%= @post.author.name %></h2>
+    </div>
+    <div class="comments_likes">
+      <span class="comments">Comments: <%= @post.comments.count %>, </span>
+      <span class="likes">Likes: <%= @post.likes.count %></span>
+    </div>
+
+    <h3><%= @post.text %></h3>
+  </div>
+
+  <div class="comments_container">
+    <% @comments = Post.find(@post.id).comments %>
+    <% if @comments.any? %>
+      <% @comments.includes(:author).each do |comment| %>
+        <div>
+          <span><%= comment.author.name %> : <%= comment.text %></span>
+        </div>
+      <% end %>
+    <% else %>
+      <div class = "no_comment">
+        <span>No comments available yet!!!</span>
+      </div>
+    <% end %>
+  </div>
+  <button class="back-all-users">
+      <%= link_to "Back to all users", root_path %>
+    </button>
+</div>

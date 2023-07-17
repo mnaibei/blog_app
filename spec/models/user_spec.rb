@@ -62,7 +62,7 @@ RSpec.describe User, type: :model do
       Post.create(title: 'second post', text: 'text', author_id: user.id)
       Post.create(title: 'third post', text: 'text', author_id: user.id)
       Post.create(title: 'fourth post', text: 'text', author_id: user.id)
-      expect(user.three_most_recent_posts).to_not include(first_post)
+      expect(user.recent_posts).to_not include(first_post)
     end
   end
 end

@@ -1,1 +1,49 @@
-<div>Here is a list of posts for a given user</div>
+<div class="posts_container">
+  <div class="user_container">
+    <img src="<%= @user.photo %>" alt="user" />
+    <div class="user_content">
+      <h2><%= @user.name %></h2>
+      <h4>Number of posts: <%= @posts.count %></h4>
+    </div>
+  </div>
+
+  <div class="posts">
+    <% @posts.includes(:comments, :author).each do |post| %>
+      <%= link_to user_post_path(@user, post.id) do %>
+      <div class="post_item">
+      <div>
+      <h3><%= post.title %></h3>
+        <p><%= post.text.split(" ")[0..80].join(" ") %></p>
+      </div>
+        <div class="comments_likes">
+          <span class="comments">Comments: <%= post.comments.count %>, </span>
+          <span class="likes">Likes: <%= post.likes.count %></span>
+        </div>
+        </div>
+        <div class="comments_container">
+          <% post.five_most_recent_comments.each do |comment| %>
+            <div class="comment">
+            <span><%= comment.author.name %>:</span>
+              <span><%= comment.text %></span>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+    <% end %>
+      </div>
+
+    <% if @posts.empty? %>
+      <div class="no_content">
+        <p>No posts for this user!</p>
+      </div>
+    <% end %>
+
+   <div class="buttons">
+    <button>
+        <%= link_to 'Pagination', user_post_path(@user, @posts.first) %>
+      </button>
+    <button class="back-all-users">
+      <%= link_to "Back to all users", root_path %>
+    </button>
+  </div>
+</div>

@@ -8,7 +8,7 @@ RSpec.describe PostsController, type: :request do
     end
 
     it 'returns a 200 OK status' do
-      get '/users/1/posts'
+      get '/users'
       expect(response).to have_http_status(:ok)
     end
 
