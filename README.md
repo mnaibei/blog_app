@@ -96,6 +96,14 @@ Example command:
 rubocop -A
 ```
 
+To run rspec tests, run the following command:
+
+Example command:
+
+```sh
+rspec
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
