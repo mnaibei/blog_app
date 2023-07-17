@@ -25,13 +25,15 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
+### Tech Stack <a name="tech-stack"></a>
+
 - Ruby on Rails
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Key Features
 
-- Ruby syntax and use of linters
+- Ruby syntax, Rails project and use of linters
 
 <!-- GETTING STARTED -->
 
