@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.describe PostsController, type: :request do
   describe 'GET #index' do
     it 'renders the posts template' do
