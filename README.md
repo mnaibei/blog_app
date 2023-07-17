@@ -6,9 +6,13 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+    - [Tech Stack](#Tech-Stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
@@ -25,13 +29,15 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
+### Tech Stack <a name="tech-stack"></a>
+
 - Ruby on Rails
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Key Features
 
-- Ruby syntax and use of linters
+- Ruby syntax, Rails project and use of linters
 
 <!-- GETTING STARTED -->
 
@@ -92,6 +98,14 @@ Example command:
 
 ```sh
 rubocop -A
+```
+
+To run rspec tests, run the following command:
+
+Example command:
+
+```sh
+rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
