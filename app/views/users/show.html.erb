@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="user-info-container">
+  <div class="user-list-item">
     <div class="user-photo">
       <%= image_tag @users.photo %>
     </div>
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="user-bio">
-    <p>Bio</p>
+    <p class="user-bio-p">Bio</p>
     <%= @users.bio %>
   </div>
   <% @users.recent_posts.each do |post| %>

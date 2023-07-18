@@ -1,7 +1,9 @@
-<div class="posts_container">
-  <div class="user_container">
-    <img src="<%= @user.photo %>" alt="user"/>
-    <div class="user_content">
+<div class="posts-container">
+  <div class="post-list-item">
+    <div class="user-photo">
+      <img src="<%= @user.photo %>" alt="user"/>
+    </div>
+    <div class="user-info">
       <h2><%= @user.name %></h2>
       <h4>Number of posts:
         <%= @posts.count %></h4>
@@ -10,13 +12,13 @@
 
   <div class="posts">
     <% @posts.each do |post| %>
-      <%= link_to user_post_path(@user, post.id) do %>
-        <div class="post_item">
+      <%= link_to user_post_path(@user, post.id), class: 'post-item' do %>
+        <div class="post">
           <div>
             <h3><%= post.title %></h3>
             <p><%= post.text.split(" ")[0..80].join(" ") %></p>
           </div>
-          <div class="comments_likes">
+          <div class="likes-comments">
             <span class="comments">Comments:
               <%= post.comments_counter %>,
             </span>
@@ -24,7 +26,7 @@
               <%= post.likes_counter %></span>
           </div>
         </div>
-        <div class="comments_container">
+        <div class="comments-container">
           <% post.five_most_recent_comments.each do |comment| %>
             <div class="comment">
               <span><%= comment.author.name %>:</span>
@@ -44,7 +46,7 @@
 
   <div class="buttons">
     <% if @posts.present? %>
-      <button>
+      <button class="pagination">
         <%= link_to "Pagination", user_post_path(@user, @posts.first) %>
       </button>
     <% end %>
