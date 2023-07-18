@@ -4,9 +4,10 @@ class Comment < ApplicationRecord
 
   after_save :update_comment_count
 
-  private
+  # private
 
   def update_comment_count
-    post.increment!(:comments_count)
+    post.increment!(:comments_counter)
+    # post.update(comments_counter: post.comments.count)
   end
 end

@@ -1,1 +1,40 @@
-<div>Here is a list of users</div>
+<div class="container">
+  <div class="user-list-item">
+    <div class="user-photo">
+      <%= image_tag @users.photo %>
+    </div>
+    <div class="user-info">
+      <p class='user-name'><%= @users.name %></p>
+      <p class='posts-counter'>
+        Number of posts:
+        <%= @users.posts_counter %></p>
+    </div>
+  </div>
+  <div class="user-bio">
+    <p class="user-bio-p">Bio</p>
+    <%= @users.bio %>
+  </div>
+  <% @users.recent_posts.each do |post| %>
+    <div class="post-info">
+      <p>Post #<%= post.id %></p>
+      <p><%= link_to post.text, user_post_path(post.author, post.id) %></p>
+      <div class="likes-comments">
+        <p>Comments:
+          <%= post.comments_counter %></p>
+        <p>Likes:
+          <%= post.likes_counter %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="buttons">
+    <%= button_tag(type: 'button', class: 'see-all-posts') do %>
+      <%= link_to user_posts_path(@users) do %>
+        See all posts
+      <% end %>
+    <% end %>
+
+    <button class="back-all-users">
+      <%= link_to "Back to all users", root_path %>
+    </button>
+  </div>
+</div>
