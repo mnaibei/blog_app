@@ -7,7 +7,7 @@
       <p class='user-name'><%= @users.name %></p>
       <p class='posts-counter'>
         Number of posts:
-        <%= @users.posts.count %></p>
+        <%= @users.posts_counter %></p>
     </div>
   </div>
   <div class="user-bio">
@@ -20,9 +20,9 @@
       <p><%= link_to post.text, user_post_path(post.author, post.id) %></p>
       <div class="likes-comments">
         <p>Comments:
-          <%= post.comments.count %></p>
+          <%= post.comments_counter %></p>
         <p>Likes:
-          <%= post.likes.count %></p>
+          <%= post.likes_counter %></p>
       </div>
     </div>
   <% end %>
