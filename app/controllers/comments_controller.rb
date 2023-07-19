@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
     @comment = Comment.new(comment_params)
     @comment.post = @post
-    @comment.author = @user
+    @comment.author = current_user
 
     if @comment.save
       redirect_to "/users/#{@user.id}/posts"
