@@ -11,6 +11,13 @@
     <p><%= @post.text %></p>
   </div>
 
+  <div class="like-comment_buttons">
+    <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form| %>
+    <%= form.submit 'Like', class: 'like_button' %>
+    <% end %>
+    <div><%= link_to "Add Comment", new_user_post_comment_path(@post.author.id, @post.id) %></div>
+  </div>
+
   <div class="comments-container">
     <% @comments = Post.find(@post.id).comments %>
     <% if @comments.any? %>
@@ -20,7 +27,7 @@
         </div>
       <% end %>
     <% else %>
-      <div class = "no-comment">
+      <div class="no-comment">
         <span>No comments available yet!!!</span>
       </div>
     <% end %>

@@ -5,14 +5,7 @@
         <div class="user-photo">
           <%= image_tag user.photo %>
         </div>
-        <div class="user-info">
-      <%= link_to user_path(user), class: 'user-link' do %>
-          <p class="user-name">
-            <%= user.name %>
-          </p>
-            <h4>Number of posts: <%= user.posts_counter %></h4>
-        </div>
-      <% end %>
+        <%= render partial: "shared/user", locals: { user: user } %>
       </li>
     <% end %>
   </ul>

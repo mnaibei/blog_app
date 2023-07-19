@@ -3,12 +3,7 @@
     <div class="user-photo">
       <%= image_tag @users.photo %>
     </div>
-    <div class="user-info">
-      <p class='user-name'><%= @users.name %></p>
-      <p class='posts-counter'>
-        Number of posts:
-        <%= @users.posts_counter %></p>
-    </div>
+    <%= render partial: "shared/user", locals: { user: @users } %>
   </div>
   <div class="user-bio">
     <p class="user-bio-p">Bio</p>

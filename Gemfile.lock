@@ -68,9 +68,18 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
+    autoprefixer-rails (10.4.13.0)
+      execjs (~> 2)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
+    bootstrap (5.2.3)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.6, < 3)
+      sassc-rails (>= 2.0.0)
+    bootstrap_form (5.2.3)
+      actionpack (>= 6.0)
+      activemodel (>= 6.0)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -91,11 +100,13 @@ GEM
     erb-formatter (0.4.3)
       syntax_tree (~> 6.0)
     erubi (1.12.0)
+    execjs (2.8.1)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
+    ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
     i18n (1.14.1)
@@ -136,6 +147,7 @@ GEM
     nokogiri (1.15.3-x86_64-darwin)
       racc (~> 1.4)
     pg (1.5.3)
+    popper_js (2.11.7)
     prettier_print (1.2.1)
     public_suffix (5.0.3)
     puma (5.6.6)
@@ -199,6 +211,14 @@ GEM
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -215,6 +235,7 @@ GEM
     syntax_tree (6.1.1)
       prettier_print (>= 1.2.0)
     thor (1.2.2)
+    tilt (2.2.0)
     timeout (0.4.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
@@ -244,6 +265,8 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap
+  bootstrap_form
   capybara
   debug
   erb-formatter
