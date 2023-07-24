@@ -6,6 +6,12 @@ require_relative '../config/environment'
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'capybara/rspec'
+
+Capybara.configure do |config|
+  config.default_driver = :selenium # or :rack_test for faster headless testing
+  config.default_max_wait_time = 5 # Set a reasonable wait time for elements to appear
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
