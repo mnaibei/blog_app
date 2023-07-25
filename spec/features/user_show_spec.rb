@@ -27,7 +27,25 @@ RSpec.describe 'User Show Page', type: :feature do
     expect(page).to have_content("Number of posts: #{@user1.posts_counter}")
   end
 
-  it 'redirects to the user show page when clicking on a user' do
+  it 'should show the bio of the user' do
+    visit user_path(@user1)
+
+    expect(page).to have_content(@user1.bio)
+  end
+
+  it 'should see a button that lets me view all of a user\'s posts' do
+    visit user_path(@user1)
+
+    expect(page).to have_content('See all posts')
+  end
+
+  it 'I can see the user first 3 posts.' do
+    visit user_path(@user1)
+
+    expect(page).to_not have_content('Total number of posts: 4')
+  end
+
+  it 'redirects to the posts show page when clicking on a user' do
     visit users_path
 
     click_link @user1.name

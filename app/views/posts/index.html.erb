@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="comments-container">
-          <% post.comments.includes(:author).limit(5) do |comment| %>
+          <% post.five_most_recent_comments.each do |comment| %>
             <div class="comment">
               <span><%= comment.author.name %>:</span>
               <span><%= comment.text %></span>
