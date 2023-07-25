@@ -1,15 +1,15 @@
 <div class="container">
   <div class="user-list-item">
     <div class="user-photo">
-      <%= image_tag @users.photo %>
+      <%= image_tag @user.photo %>
     </div>
-    <%= render partial: "shared/user", locals: { user: @users } %>
+    <%= render partial: "shared/user", locals: { user: @user } %>
   </div>
   <div class="user-bio">
     <p class="user-bio-p">Bio</p>
-    <%= @users.bio %>
+    <%= @user.bio %>
   </div>
-  <% @users.recent_posts.each do |post| %>
+  <% @user.recent_posts.each do |post| %>
     <div class="post-info">
       <p>Post #<%= post.id %></p>
       <p><%= link_to post.text, user_post_path(post.author, post.id) %></p>
@@ -23,7 +23,7 @@
   <% end %>
   <div class="buttons">
     <%= button_tag(type: 'button', class: 'see-all-posts') do %>
-      <%= link_to user_posts_path(@users) do %>
+      <%= link_to user_posts_path(@user) do %>
         See all posts
       <% end %>
     <% end %>
