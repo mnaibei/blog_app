@@ -50,5 +50,20 @@ RSpec.describe 'Post Index Page', type: :feature do
     expect(page).not_to have_content('Comment 7')
   end
 
+  it 'displays a message when there are no posts for the user' do
+    @user.posts.destroy_all
 
+    visit user_posts_path(@user)
+
+    expect(page).to have_content('No posts for this user!')
+  end
+
+  it 'redirects to the post show page when clicking on a post' do
+    visit user_posts_path(@user)
+
+    first('.post-item').click
+
+    expect(current_path).to eq(user_post_path(@user, @post1))
+    expect(page).to have_content('Post 1')
+  end
 end
