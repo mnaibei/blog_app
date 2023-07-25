@@ -7,6 +7,14 @@
   text-decoration: none;
 }
 
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}
+
 .user-list-item {
   display: flex;
   align-items: center;
