@@ -1,7 +1,14 @@
 <div class="container">
   <div class="user-list-item">
     <div class="user-photo">
-      <%= image_tag @user.photo %>
+      <% if @user.photo.present? %>
+        <%= image_tag @user.photo %>
+      <% else %>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtOqCkEk1bHWlechHBJVOMBkfxoe9vXRO9SH0aTfy8mhNfXVH0DPk0Iu7LEYGg4YlIeAE&usqp=CAU"
+          alt="Generic Photo"
+        >
+      <% end %>
     </div>
     <%= render partial: "shared/user", locals: { user: @user } %>
   </div>

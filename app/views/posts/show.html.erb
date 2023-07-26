@@ -1,11 +1,15 @@
 <div class="comments-details">
   <div class="comments-container">
     <div class="posts-title">
-      <h2>"<%= @post.title %>" by <%= @user.name %></h2>
-    <div class="comments-likes">
-      <span class="comments">Comments: <%= @post.comments_counter %>, </span>
-      <span class="likes">Likes: <%= @post.likes_counter %></span>
-    </div>
+      <h2>"<%= @post.title %>" by
+        <%= @user.name %></h2>
+      <div class="comments-likes">
+        <span class="comments">Comments:
+          <%= @post.comments_counter %>,
+        </span>
+        <span class="likes">Likes:
+          <%= @post.likes_counter %></span>
+      </div>
     </div>
 
     <p><%= @post.text %></p>
@@ -13,7 +17,7 @@
 
   <div class="like-comment_buttons">
     <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form| %>
-    <%= form.submit 'Like', class: 'like_button' %>
+      <%= form.submit "Like", class: "like_button" %>
     <% end %>
     <div><%= link_to "Add Comment", new_user_post_comment_path(@post.author.id, @post.id) %></div>
   </div>
@@ -23,7 +27,9 @@
     <% if @comments.any? %>
       <% @comments.includes(:author).each do |comment| %>
         <div>
-          <span><%= comment.author.name %> : <%= comment.text %></span>
+          <span><%= comment.author.name %>
+            :
+            <%= comment.text %></span>
         </div>
       <% end %>
     <% else %>
@@ -33,8 +39,8 @@
     <% end %>
   </div>
   <div class="show-posts-back-button">
-  <button class="back-all-users">
+    <button class="back-all-users">
       <%= link_to "Back to all users", root_path %>
     </button>
-    </div>
+  </div>
 </div>

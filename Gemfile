@@ -45,6 +45,7 @@ gem 'bootsnap', require: false
 
 gem 'bootstrap'
 gem 'bootstrap_form'
+gem 'devise'
 gem 'erb-formatter'
 
 # Use Sass to process CSS

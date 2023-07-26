@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: %i[index show]
   def index
     # @posts = Post.all
     @user = User.find(params[:user_id])
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @user = User.find(params[:user_id])
-    @post.author = current_user
+    @post.author = @user
     if @post.save
       redirect_to user_post_url(@user, @post)
     else
