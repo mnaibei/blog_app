@@ -1,4 +1,6 @@
 class Api::CommentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     post = Post.find(params[:post_id])
     comments = post.comments
@@ -7,12 +9,14 @@ class Api::CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
+    # @user = User.find(params[:user_id])
     comment = post.comments.new(comment_params)
-    comment.author = current_user
+    # comment.author = @user
 
     if comment.save
       render json: comment, status: :created
     else
+      puts comment.errors.full_messages
       render json: { errors: comment.errors.full_messages }, status: :unprocessable_entity
     end
   end
