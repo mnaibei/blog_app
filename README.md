@@ -104,6 +104,12 @@ rubocop -A
 - Twitter: [MNaibei\_](https://twitter.com/mnaibei_)
 - LinkedIn: [Mucha Julius](https://linkedin.com/in/mucha-julius)
 
+👤 **Fatihah Oduwole**
+
+- GitHub: [@jeddaa](https://github.com/jeddaa)
+- Twitter: [jeddaah](https://twitter.com/_jeddaah)
+- LinkedIn: [@jedda](https://linkedin.com/in/fatihahoduwole)
+
 <!-- 👤 **Mercy Mugambi**
 
 - GitHub: [@mercymugambi](https://github.com/mercymugambi)
@@ -117,6 +123,8 @@ rubocop -A
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] More complex ruby commands.
+- **Implement the ui**
+- **Modify the login process**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

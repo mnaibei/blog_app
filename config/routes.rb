@@ -20,9 +20,5 @@ Rails.application.routes.draw do
         resources :comments, only: %i[index create]
       end
     end
-
-    # resources :posts, only: [] do
-    #   resources :comments, only: %i[index create]
-    # end
   end
 end
