@@ -5,6 +5,10 @@ class Comment < ApplicationRecord
   after_save :update_comment_count
   after_destroy :update_comment_counter
 
+  def as_json(_options = {})
+    { comment: text, author: author.name } # NOT including the email field
+  end
+
   private
 
   def update_comment_count

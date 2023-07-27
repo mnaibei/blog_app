@@ -10,6 +10,11 @@ class Post < ApplicationRecord
   after_save :update_posts_count
   after_destroy :update_posts_counter
 
+  def as_json(_options = {})
+    { post_title: title, post_text: text, number_of_comments: comments_counter,
+      number_of_likes: likes_counter, created_at:, updated_at: }
+  end
+
   def five_most_recent_comments
     comments.includes(:author).order(created_at: :desc).limit(5)
   end
